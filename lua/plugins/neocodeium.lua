@@ -49,7 +49,7 @@ return {
     end, { desc = "NeoCodeium: Accept word" })
 
     -- Accept line
-    vim.keymap.set("i", "<C-j>", function()
+    vim.keymap.set("i", "<C-S-j>", function()
       require("neocodeium").accept_line()
     end, { desc = "NeoCodeium: Accept line" })
 

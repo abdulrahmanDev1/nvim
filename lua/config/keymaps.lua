@@ -91,6 +91,10 @@ local keymaps = {
   { N, "<C-A-j>", "yy]p", opts("Duplicate line down") },
   { V, "<C-A-k>", "yP", opts("Duplicate selection up") },
   { V, "<C-A-j>", "y]p", opts("Duplicate selection down") },
+  { N, "<C-h>", "<C-w>h", opts("Go to left window") },
+  { N, "<C-j>", "<C-w>j", opts("Go to down window") },
+  { N, "<C-k>", "<C-w>k", opts("Go to up window") },
+  { N, "<C-l>", "<C-w>l", opts("Go to right window") },
 
   -- Visual mode
   { N, "<A-v>", "<C-v>", opts("Block selection") },
@@ -191,8 +195,15 @@ local keymaps = {
   -- COMMENTS
   -- ===========================================================================
 
+  -- Ctrl+/ sends <C-_> in legacy terminals and <C-/> under the Kitty
+  -- keyboard protocol, so map both. Normal mode toggles the current line
+  -- (gcc); visual mode toggles the selection (gc).
+
   { N, "<C-/>", "gcc", opts("Comment line", { remap = true }) },
-  { N_V, "<C-_>", "gcc", opts("Comment selection", { remap = true }) },
+  { N, "<C-_>", "gcc", opts("Comment line", { remap = true }) },
+  { V, "<C-/>", "gc", opts("Comment selection", { remap = true }) },
+  { V, "<C-_>", "gc", opts("Comment selection", { remap = true }) },
+  { I, "<C-/>", "<Esc>:normal gcc<CR>a", opts("Comment line and return to insert mode") },
   { I, "<C-_>", "<Esc>:normal gcc<CR>a", opts("Comment line and return to insert mode") },
 
   -- ===========================================================================

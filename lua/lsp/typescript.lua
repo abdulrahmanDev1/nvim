@@ -13,9 +13,6 @@ return {
   -- ESLint configuration
   eslint = {
     enabled = false,
-    settings = {
-      format = { enable = true },
-    },
   },
 
   -- Volar (Vue) configuration

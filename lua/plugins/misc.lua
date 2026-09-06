@@ -1,20 +1,5 @@
 return {
   {
-    "aserowy/tmux.nvim",
-    lazy = true,
-    keys = {
-      { "<C-h>", "<cmd>lua require('tmux').move_left()<cr>", desc = "Move to left tmux pane" },
-      { "<C-j>", "<cmd>lua require('tmux').move_bottom()<cr>", desc = "Move to bottom tmux pane" },
-      { "<C-k>", "<cmd>lua require('tmux').move_top()<cr>", desc = "Move to top tmux pane" },
-      { "<C-l>", "<cmd>lua require('tmux').move_right()<cr>", desc = "Move to right tmux pane" },
-    },
-    config = function()
-      return require("tmux").setup({ copy_sync = {
-        enable = false,
-      } })
-    end,
-  },
-  {
     "lambdalisue/vim-suda",
     cmd = { "SudaRead", "SudaWrite" },
     config = function()
@@ -254,5 +239,14 @@ return {
     opts = {
       box_style = "sharp",
     },
+  },
+  {
+    "vuki656/review.nvim",
+    event = "BufReadPre",
+    config = function()
+      require("review").setup({
+        keymaps = { toggle = "<leader>rv" },
+      })
+    end,
   },
 }

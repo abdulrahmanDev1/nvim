@@ -229,7 +229,7 @@ opts.styles = {
 -- Scroll Configuration
 -- ===============================
 opts.scroll = {
-  enabled = false,
+  enabled = false, -- smooth-scroll animation fights the cursor position while typing in / search and the grep picker
 }
 
 -- ===============================

@@ -8,12 +8,12 @@ local lazy_status = require("lazy.status")
 
 local options = {
   base46 = {
-    theme = "kanagawa-dragon",
+    theme = "gruvchad",
     hl_add = {},
     integrations = {},
     changed_themes = {},
     transparency = true,
-    theme_toggle = { "kanagawa-dragon", "catppuccin" },
+    theme_toggle = { "gruvchad", "catppuccin" },
     hl_override = {},
   },
 }
